@@ -7,7 +7,7 @@
 
 ## About <a name = "about"></a>
 This is a module for [micropython](https://github.com/micropython/micropython)
-to set the MAC adresses of LAN/WLAN and Bluetooth interfaces.
+to set the MAC addresses of LAN/WLAN and Bluetooth interfaces.
 
 ## Getting Started <a name = "getting_started"></a>
 
