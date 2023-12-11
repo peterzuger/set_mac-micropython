@@ -41,8 +41,8 @@
 #define MAC_LENGTH 6
 static uint8_t macs[MAC_COUNT][MAC_LENGTH] = {0};
 
-void mp_hal_get_mac(int idx, uint8_t buf[MAC_LENGTH]) {
-    if(idx <= 0 && idx <= MAC_COUNT){
+void mp_hal_get_mac(int idx, uint8_t buf[MAC_LENGTH]){
+    if(idx >= 0 && idx < MAC_COUNT){
         if(macs[idx][0] != 0){
             memcpy(buf, macs[idx], MAC_LENGTH);
             return;
