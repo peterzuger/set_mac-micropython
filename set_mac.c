@@ -51,7 +51,7 @@ void mp_hal_get_mac(int idx, uint8_t buf[MAC_LENGTH]){
     mp_hal_generate_laa_mac(idx, buf);
 }
 
-STATIC mp_obj_t set_mac_set_mac(mp_obj_t idx_in, mp_obj_t mac_in){
+static mp_obj_t set_mac_set_mac(mp_obj_t idx_in, mp_obj_t mac_in){
     mp_uint_t idx = mp_obj_int_get_uint_checked(idx_in);
 
     if(idx >= MAC_COUNT)
@@ -70,15 +70,15 @@ STATIC mp_obj_t set_mac_set_mac(mp_obj_t idx_in, mp_obj_t mac_in){
 
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_2(set_mac_set_mac_fun_obj, set_mac_set_mac);
+static MP_DEFINE_CONST_FUN_OBJ_2(set_mac_set_mac_fun_obj, set_mac_set_mac);
 
 
-STATIC const mp_rom_map_elem_t set_mac_globals_table[] = {
+static const mp_rom_map_elem_t set_mac_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_set_mac) },
     { MP_ROM_QSTR(MP_QSTR_set_mac),  MP_ROM_PTR(&set_mac_set_mac_fun_obj)     },
 };
 
-STATIC MP_DEFINE_CONST_DICT(
+static MP_DEFINE_CONST_DICT(
     mp_module_set_mac_globals,
     set_mac_globals_table
     );
