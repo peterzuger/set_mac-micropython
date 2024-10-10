@@ -32,10 +32,10 @@
 
 #if defined(MODULE_SET_MAC_ENABLED) && MODULE_SET_MAC_ENABLED == 1
 
+#include "py/mphal.h"
 #include "py/obj.h"
 #include "py/objarray.h"
 #include "py/runtime.h"
-#include "mphalport.h"
 
 #define MAC_COUNT 4
 #define MAC_LENGTH 6
