@@ -70,10 +70,10 @@ import set_mac
 The module has one function that can be used as follows:
 
 ```
-import network
-set_mac.set_mac(network.STA_IF, b"\xEB\x7B\xEF\xCC\x28\x80")
-set_mac.set_mac(network.AP_IF, b"\xF6\x91\xDB\xC4\x33\x69")
+from network import WLAN
+set_mac.set_mac(WLAN.IF_STA, b"\xEB\x7B\xEF\xCC\x28\x80")
+set_mac.set_mac(WLAN.IF_AP, b"\xF6\x91\xDB\xC4\x33\x69")
 ```
 
-This sets the MAC address of `STA_IF` (WLAN station mode) and `AP_IF` (WLAN
+This sets the MAC address of `IF_STA` (WLAN station mode) and `IF_AP` (WLAN
 access point mode) to the respective address.
