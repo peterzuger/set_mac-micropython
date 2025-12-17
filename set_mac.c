@@ -57,16 +57,16 @@ static mp_obj_t set_mac_set_mac(mp_obj_t idx_in, mp_obj_t mac_in){
     if(idx >= MAC_COUNT)
         mp_raise_ValueError(MP_ERROR_TEXT("MAC index out of range"));
 
-    size_t size;
+    mp_buffer_info_t mac;
 
     // raises TypeError
-    const uint8_t* mac = (const uint8_t*)mp_obj_str_get_data(mac_in, &size);
+    mp_get_buffer_raise(mac_in, &mac, MP_BUFFER_READ);
 
-    if(size != MAC_LENGTH){
+    if(mac.len != MAC_LENGTH){
         mp_raise_ValueError(MP_ERROR_TEXT("MAC has the wrong size"));
     }
 
-    memcpy(macs[idx], mac, size);
+    memcpy(macs[idx], mac.buf, mac.len);
 
     return mp_const_none;
 }
